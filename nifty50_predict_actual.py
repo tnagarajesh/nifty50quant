@@ -6,6 +6,7 @@ nifty50 = pd.read_csv('https://storage.googleapis.com/nifty50/Nifty50_prediction
 nifty50_pre = pd.read_csv('https://storage.googleapis.com/nifty50/nifty50_features_predictions.csv')
 
 st.write("Today Nifty50 predicted close price:", nifty50_pre.iat[-1,7])
+st.table(nifty50_pre)
 
 # create data
 x = nifty50_pre['Date']
@@ -16,11 +17,11 @@ e = nifty50['Prediction Error (Points)']
 
 fig, (ax1, ax2) = plt.subplots(2, 1)
 
-ax1.plot(x, z, label="Actual Close Value", marker='o', linestyle="-")
+ax1.plot(x1, z, label="Actual Close Value", marker='o', linestyle="-")
 ax1.plot(x, p, label="Predicted Close Value", marker='o', linestyle="--")
 ax1.legend()
 
-ax2.plot(x1, e, label="Prediction Error", marker='o', linestyle="-")
+ax2.plot(x, e, label="Prediction Error", marker='o', linestyle="-")
 ax2.legend()
 
 st.pyplot(fig)
