@@ -21,7 +21,7 @@ ax1.plot(x, z, label="Actual Close Value", marker='o', linestyle="-")
 ax1.plot(x, p, label="Predicted Close Value", marker='o', linestyle="--")
 ax1.legend()
 
-ax2.plot(x, e, label="Prediction Error", marker='o', linestyle="-")
+ax2.plot(x, e, label="Prediction Error(points) - 0 means no error", marker='o', linestyle="-")
 ax2.legend()
 
 st.pyplot(fig)
