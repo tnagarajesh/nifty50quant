@@ -7,7 +7,7 @@ nifty50_pre = pd.read_csv('https://storage.googleapis.com/nifty50/nifty50_featur
 
 st.write("Today Nifty50 predicted close price:", nifty50_pre.iat[-1,7])
 
-st.write("Predicted Vs Actual Nifty50 close price:")
+st.write("Predicted Vs Actual Nifty50 close price comparison:")
 
 # create data
 x = nifty50['Date']
