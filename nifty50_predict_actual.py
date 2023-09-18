@@ -6,7 +6,7 @@ nifty50 = pd.read_csv('https://storage.googleapis.com/nifty50/Nifty50_prediction
 nifty50_pre = pd.read_csv('https://storage.googleapis.com/nifty50/nifty50_features_predictions.csv')
 
 #st.write("Today Nifty50 predicted close price:", nifty50_pre.iat[-1,8])
-st.write("Today Nifty50 predicted close price:", nifty50_pre.loc['-1','Predicted_Value'])
+st.write("Today Nifty50 predicted close price:", nifty50_pre.loc[-1,'Predicted_Value'])
 #result = df.loc['Row_2', 'Name']
 
 st.write("Past Predicted Vs Actual Nifty50 close price comparison:")
