@@ -11,8 +11,7 @@ st.write("Today Nifty50 predicted close price:", nifty50_pre.iat[-1,7])
 st.write("Past Predicted Vs Actual Nifty50 close price comparison:")
 
 # create data
-#x = nifty50['Date']
-x = '2022-09-26'
+x = nifty50['Date']
 z = nifty50['Actual_Nifty50_Close']
 p = nifty50['Predicted_Nifty50_Close']
 e = nifty50['Prediction Error (Points)']
