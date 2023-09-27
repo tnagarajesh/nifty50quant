@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import streamlit as st
-from datetime import date
+from datetime import datetime
 
 nifty50 = pd.read_csv('https://storage.googleapis.com/nifty50/Nifty50_prediction.csv')
 nifty50_pre = pd.read_csv('https://storage.googleapis.com/nifty50/nifty50_features_predictions.csv')
@@ -18,11 +18,15 @@ e = nifty50['Prediction Error (Points)']
 
 fig, (ax1, ax2) = plt.subplots(2, 1)
 
-ax1.plot(x, z, label="Actual Close Value", marker='o', linestyle="-")
-ax1.plot(x, p, label="Predicted Close Value", marker='o', linestyle="--")
+# ax1.plot(x, z, label="Actual Close Value", marker='o', linestyle="-")
+# ax1.plot(x, p, label="Predicted Close Value", marker='o', linestyle="--")
+# ax1.legend()
+
+ax1.plot(x.strftime("%d%B"), z, label="Actual Close Value", marker='o', linestyle="-")
+ax1.plot(x.strftime("%d%B"), p, label="Predicted Close Value", marker='o', linestyle="--")
 ax1.legend()
 
-ax2.plot(x, e, label="Prediction Error(points) - 0 means no error", marker='o', linestyle="-")
+ax2.plot(x.strftime("%d%B"), e, label="Prediction Error(points) - 0 means no error", marker='o', linestyle="-")
 ax2.legend()
 
 st.pyplot(fig)
