@@ -18,15 +18,11 @@ e = nifty50['Prediction Error (Points)']
 
 fig, (ax1, ax2) = plt.subplots(2, 1)
 
-# ax1.plot(x, z, label="Actual Close Value", marker='o', linestyle="-")
-# ax1.plot(x, p, label="Predicted Close Value", marker='o', linestyle="--")
-# ax1.legend()
-
-ax1.plot(x.strftime("%d%B"), z, label="Actual Close Value", marker='o', linestyle="-")
-ax1.plot(x.strftime("%d%B"), p, label="Predicted Close Value", marker='o', linestyle="--")
+ax1.plot(x, z, label="Actual Close Value", marker='o', linestyle="-")
+ax1.plot(x, p, label="Predicted Close Value", marker='o', linestyle="--")
 ax1.legend()
 
-ax2.plot(x.strftime("%d%B"), e, label="Prediction Error(points) - 0 means no error", marker='o', linestyle="-")
+ax2.plot(x, e, label="Prediction Error(points) - 0 means no error", marker='o', linestyle="-")
 ax2.legend()
 
 st.pyplot(fig)
