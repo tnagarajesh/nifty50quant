@@ -4,10 +4,14 @@ import streamlit as st
 from datetime import datetime
 
 #nifty50 = pd.read_csv('https://storage.googleapis.com/nifty50/Nifty50_prediction.csv')
-nifty50 = pd.read_csv('https://storage.googleapis.com/nifty50/nifty50_prediction.csv')
-nifty50_pre = pd.read_csv('https://storage.googleapis.com/nifty50/nifty50_features_predictions.csv')
+#nifty50 = pd.read_csv('https://storage.googleapis.com/nifty50/nifty50_prediction.csv')
+#nifty50_pre = pd.read_csv('https://storage.googleapis.com/nifty50/nifty50_features_predictions.csv')
 
-st.write("Today Nifty50 predicted close price:", nifty50_pre.iat[-1,7])
+nifty50 = pd.read_csv('https://storage.googleapis.com/nifty50_prediction/nifty50_prediction.csv')
+nifty50_pre = pd.read_csv('https://storage.googleapis.com/nifty50_prediction/nifty50_features_predictions.csv')
+
+
+st.write("Today Nifty50 predicted close price:", nifty50_pre.iat[-1,5])
 
 st.write("Past Predicted Vs Actual Nifty50 close price comparison:")
 
