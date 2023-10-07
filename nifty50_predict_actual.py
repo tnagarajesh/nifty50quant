@@ -18,7 +18,7 @@ z = nifty50['Actual_Nifty50_Close']
 p = nifty50['Predicted_Nifty50_Close']
 e = nifty50['Prediction Error (Points)']
 
-st.header('Nifty50 past prediction algorithm performance metrics', divider='rainbow')
+st.header('Nifty50 prediction algorithm past performance metrics', divider='rainbow')
 
 graph, table = st.columns(2)
 
