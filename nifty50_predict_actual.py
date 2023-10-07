@@ -2,23 +2,26 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import streamlit as st
 
-st.set_page_config(page_title="NiftyQuants", layout="wide")
+st.set_page_config(page_title="Nifty50 Prediction Today", layout="wide")
+
+st.header('Nifty50 Prediction Today', divider='rainbow')
 
 nifty50 = pd.read_csv('https://storage.googleapis.com/nifty50_prediction/nifty50_prediction.csv', index_col=None)
 nifty50_pre = pd.read_csv('https://storage.googleapis.com/nifty50_prediction/nifty50_features_predictions.csv')
 
 nifty50_pred_value = nifty50_pre.iat[-1, 7]
-title = "Today Nifty50 Predicted Close: " + str(nifty50_pred_value)
+title = "Today Nifty50 Predicted Close Price: " + str(nifty50_pred_value)
 
 st.title(title)
+
+st.text('We have predicted Nifty50 index close price using machine learning algorithm. Refer following Nifty50 past '
+        'predictions and the algorithm performance metrics.')
 
 # create data
 x = nifty50['Date']
 z = nifty50['Actual_Nifty50_Close']
 p = nifty50['Predicted_Nifty50_Close']
 e = nifty50['Prediction Error (Points)']
-
-st.header('Nifty50 prediction algorithm past performance metrics', divider='rainbow')
 
 graph, table = st.columns(2)
 
