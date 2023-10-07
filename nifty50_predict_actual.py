@@ -3,10 +3,6 @@ import matplotlib.pyplot as plt
 import streamlit as st
 from datetime import datetime
 
-#nifty50 = pd.read_csv('https://storage.googleapis.com/nifty50/Nifty50_prediction.csv')
-#nifty50 = pd.read_csv('https://storage.googleapis.com/nifty50/nifty50_prediction.csv')
-#nifty50_pre = pd.read_csv('https://storage.googleapis.com/nifty50/nifty50_features_predictions.csv')
-
 nifty50 = pd.read_csv('https://storage.googleapis.com/nifty50_prediction/nifty50_prediction.csv')
 nifty50_pre = pd.read_csv('https://storage.googleapis.com/nifty50_prediction/nifty50_features_predictions.csv')
 
