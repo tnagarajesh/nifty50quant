@@ -4,15 +4,13 @@ import streamlit as st
 
 st.set_page_config(page_title="Nifty50 Prediction Today", layout="wide")
 
-st.header('Nifty50 Prediction Today', divider='rainbow')
-
 nifty50 = pd.read_csv('https://storage.googleapis.com/nifty50_prediction/nifty50_prediction.csv', index_col=None)
 nifty50_pre = pd.read_csv('https://storage.googleapis.com/nifty50_prediction/nifty50_features_predictions.csv')
 
 nifty50_pred_value = nifty50_pre.iat[-1, 7]
 title = "Today Nifty50 Predicted Close Price: " + str(nifty50_pred_value)
 
-st.title(title)
+st.header('Nifty50 Prediction Today', divider='rainbow')
 
 # create data
 x = nifty50['Date']
