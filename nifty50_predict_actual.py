@@ -10,7 +10,7 @@ nifty50_pre = pd.read_csv('https://storage.googleapis.com/nifty50_prediction/nif
 nifty50_pred_value = nifty50_pre.iat[-1, 7]
 title = "Today Nifty50 Predicted Close Price: " + str(nifty50_pred_value)
 
-st.header('Nifty50 Prediction Today', divider='rainbow')
+st.header(title, divider='rainbow')
 
 # create data
 x = nifty50['Date']
