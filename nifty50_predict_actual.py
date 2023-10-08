@@ -14,9 +14,6 @@ title = "Today Nifty50 Predicted Close Price: " + str(nifty50_pred_value)
 
 st.title(title)
 
-st.text('We have predicted Nifty50 index close price using machine learning algorithm. Refer following Nifty50 past '
-        'predictions and the algorithm performance metrics.')
-
 # create data
 x = nifty50['Date']
 z = nifty50['Actual_Nifty50_Close']
