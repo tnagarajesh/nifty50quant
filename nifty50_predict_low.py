@@ -30,3 +30,5 @@ plt.grid(visible=None, which='major', axis='y', linestyle='--')
 plt.legend()
 st.pyplot(fig)
 
+st.write("")
+st.dataframe(nifty50, use_container_width=True, hide_index=True)
