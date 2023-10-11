@@ -31,4 +31,13 @@ plt.legend()
 st.pyplot(fig)
 
 st.write("")
-st.dataframe(nifty50, use_container_width=True, hide_index=True)
+
+# Create a pandas DataFrame from the dictionary
+nifty50_low = pd.DataFrame()
+
+nifty50_low['Date'] = x
+nifty50_low['Actual_Nifty50_High'] = z
+nifty50_low['Predicted_Nifty50_High'] = p
+nifty50_low['High Prediction Error (Points)'] = e
+
+st.dataframe(nifty50_low, use_container_width=True, hide_index=True)
