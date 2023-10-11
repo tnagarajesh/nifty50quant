@@ -14,7 +14,7 @@ nifty50_ac1_pred_close_vcog = nifty50_ac1_vcog.iat[-1, 4]
 
 nifty50_pred_value = (nifty50_ac2_pred_close_vcog + nifty50_ac2_pred_close_vcog_hog_log + nifty50_ac1_pred_close_vcog)/3
 
-title = "Today Nifty50 Predicted Close Price: " + str(nifty50_pred_value)
+title = "Today Nifty50 Predicted Close Price (avg): " + str(nifty50_pred_value)
 
 st.header(title, divider='rainbow')
 
