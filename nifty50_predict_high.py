@@ -29,3 +29,15 @@ plt.grid(visible=None, which='major', axis='y', linestyle='--')
 plt.legend()
 st.pyplot(fig)
 
+# Create a pandas DataFrame from the dictionary
+nifty50_high = pd.DataFrame()
+
+nifty50_high['Date'] = x
+nifty50_high['Actual_Nifty50_High'] = z
+nifty50_high['Predicted_Nifty50_High'] = p
+nifty50_high['High Prediction Error (Points)'] = e
+
+st.write("")
+
+st.dataframe(nifty50_high, use_container_width=True, hide_index=True)
+
