@@ -29,3 +29,12 @@ plt.grid(visible=None, which='major', axis='y', linestyle='--')
 plt.legend()
 st.pyplot(fig)
 
+nifty50_close= pd.DataFrame()
+
+nifty50_close['Date'] = x
+nifty50_close['Actual_Nifty50_High'] = z
+nifty50_close['Predicted_Nifty50_High'] = p
+nifty50_close['High Prediction Error (Points)'] = e
+
+st.write("")
+st.dataframe(nifty50_close, use_container_width=True, hide_index=True)
