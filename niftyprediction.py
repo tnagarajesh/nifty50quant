@@ -106,10 +106,10 @@ with placeholder.container():
         #high_r_squared = r2_score(r, q)
         high_rmse = np.sqrt(high_mse)
 
-        st.write("**Predicted High MAE**",high_mae)
-        st.write("**Predicted High MSE**", high_mse)
-        #st.write("**Predicted High r2_score**",high_r_squared)
-        st.write("**Predicted High RMSE**", high_rmse)
+        st.write("**High MAE**",high_mae)
+        st.write("**High MSE**", high_mse)
+        #st.write("**High r2_score**",high_r_squared)
+        st.write("**High RMSE**", high_rmse)
 
     with low_metrics:
         low_mae = mean_absolute_error(t, s)
@@ -117,10 +117,10 @@ with placeholder.container():
         # low_r_squared = r2_score(t, s)
         low_rmse = np.sqrt(low_mse)
 
-        st.write("**Predicted Low MAE**", low_mae)
-        st.write("**Predicted Low MSE**", low_mse)
-        #st.write("**Predicted Low r2_score**", low_r_squared)
-        st.write("**Predicted Low RMSE**", low_rmse)
+        st.write("**Low MAE**", low_mae)
+        st.write("**Low MSE**", low_mse)
+        #st.write("**Low r2_score**", low_r_squared)
+        st.write("**Low RMSE**", low_rmse)
 
     with close_metrics:
         close_mae = mean_absolute_error(z, p)
@@ -128,8 +128,8 @@ with placeholder.container():
         # close_r_squared = r2_score(z, p)
         close_rmse = np.sqrt(close_mse)
 
-        st.write("**Predicted Close MAE**", close_mae)
-        st.write("**Predicted Close MSE**", close_mse)
-        # st.write("**Predicted Close r2_score**", close_r_squared)
-        st.write("**Predicted Close RMSE**", close_rmse)
+        st.write("**Close MAE**", close_mae)
+        st.write("**Close MSE**", close_mse)
+        # st.write("**Close r2_score**", close_r_squared)
+        st.write("**Close RMSE**", close_rmse)
 
