@@ -91,11 +91,11 @@ with placeholder.container():
     with Close_table:
         st.dataframe(nifty50[['Date', 'Predicted_Close', 'Actual_Close', 'Close_Prediction_Error']], hide_index=True)
 
-    st.header("Trade Level Analytics", divider='rainbow')
+    #st.header("Trade Level Analytics", divider='rainbow')
 
-    st.write("**Till date cumulative returns(1 Lot):** ", (np.sum([nifty50['Net_ Trade_Profit_Loss']]))*50)
+    #st.write("**Till date cumulative returns(1 Lot):** ", (np.sum([nifty50['Net_ Trade_Profit_Loss']]))*50)
 
-    st.dataframe(nifty50[['Date', 'Short_Entry_Price', 'Short_Exit_Price', 'Short_Trade_Profit_Loss', 'Long_Entry_Price', 'Long_Exit_Price','Long_Trade_Profit_Loss', 'Net_ Trade_Profit_Loss']], hide_index=True)
+    #st.dataframe(nifty50[['Date', 'Short_Entry_Price', 'Short_Exit_Price', 'Short_Trade_Profit_Loss', 'Long_Entry_Price', 'Long_Exit_Price','Long_Trade_Profit_Loss', 'Net_ Trade_Profit_Loss']], hide_index=True)
 
     st.header("Model Level Metrics", divider='rainbow')
 
