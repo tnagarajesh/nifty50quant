@@ -16,7 +16,7 @@ placeholder = st.empty()
 
 nifty50 = pd.read_csv('https://storage.googleapis.com/nifty50/nifty50_predict_actual.csv', index_col=None)
 
-nifty50.to_csv("nifty50_predict_actual.csv")
+#nifty50.to_csv("nifty50_predict_actual.csv")
 
 nifty50_pre = pd.read_csv('https://storage.googleapis.com/nifty50/nifty50_prediction.csv')
 nifty50_pred_high = pd.read_csv('https://storage.googleapis.com/nifty50/nifty50_prediction_high.csv')
