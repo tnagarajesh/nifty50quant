@@ -10,7 +10,7 @@ st.title("Nifty50 Predictions generated using machine learning algorithms")
 
 placeholder = st.empty()
 
-st.header("Nifty50 Predictions Today",divider='rainbow')
+#st.header("Nifty50 Predictions Today",divider='rainbow')
 
 placeholder = st.empty()
 
