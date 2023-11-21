@@ -10,7 +10,7 @@ st.title("Nifty50 Predictions generated using machine learning algorithms")
 
 placeholder = st.empty()
 
-#st.header("Nifty50 Predictions Today",divider='rainbow')
+st.header("Nifty50 Predictions Today")
 
 placeholder = st.empty()
 
@@ -97,7 +97,7 @@ with placeholder.container():
 
     #st.dataframe(nifty50[['Date', 'Short_Entry_Price', 'Short_Exit_Price', 'Short_Trade_Profit_Loss', 'Long_Entry_Price', 'Long_Exit_Price','Long_Trade_Profit_Loss', 'Net_ Trade_Profit_Loss']], hide_index=True)
 
-    st.header("Model Level Metrics", divider='rainbow')
+    st.header("Model Level Metrics")
 
     high_metrics, low_metrics, close_metrics = st.columns(3)
     with high_metrics:
