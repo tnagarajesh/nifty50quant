@@ -57,7 +57,8 @@ with placeholder.container():
         st.pyplot(fig1)
 
     with High_table:
-        st.dataframe(nifty50[['Date', 'Predicted_High', 'Actual_High', 'High_ Prediction_Error']], hide_index=True)
+        nifty501=nifty50.sort_values(by='Date',ascending=False)
+        st.dataframe(nifty501[['Date', 'Predicted_High', 'Actual_High', 'High_ Prediction_Error']], hide_index=True)
 
     st.divider()
 
@@ -73,7 +74,8 @@ with placeholder.container():
         plt.legend()
         st.pyplot(fig2)
     with Low_table:
-        st.dataframe(nifty50[['Date', 'Predicted_Low', 'Actual_Low', 'Low_Prediction_Error']], hide_index=True)
+        nifty502 = nifty50.sort_values(by='Date',ascending=False)
+        st.dataframe(nifty502[['Date', 'Predicted_Low', 'Actual_Low', 'Low_Prediction_Error']], hide_index=True)
 
     st.divider()
 
@@ -89,7 +91,8 @@ with placeholder.container():
         plt.legend()
         st.pyplot(fig)
     with Close_table:
-        st.dataframe(nifty50[['Date', 'Predicted_Close', 'Actual_Close', 'Close_Prediction_Error']], hide_index=True)
+        nifty503 = nifty50.sort_values(by='Date', ascending=False)
+        st.dataframe(nifty503[['Date', 'Predicted_Close', 'Actual_Close', 'Close_Prediction_Error']], hide_index=True)
 
     #st.header("Trade Level Analytics", divider='rainbow')
 
@@ -114,7 +117,7 @@ with placeholder.container():
     with low_metrics:
         low_mae = mean_absolute_error(t, s)
         #low_mse = mean_squared_error(t, s)
-        # low_r_squared = r2_score(t, s)
+        #low_r_squared = r2_score(t, s)
         #low_rmse = np.sqrt(low_mse)
 
         st.write("**Low MAE**", low_mae)
@@ -125,11 +128,11 @@ with placeholder.container():
     with close_metrics:
         close_mae = mean_absolute_error(z, p)
         #close_mse = mean_squared_error(z, p)
-        # close_r_squared = r2_score(z, p)
+        #close_r_squared = r2_score(z, p)
         #close_rmse = np.sqrt(close_mse)
 
         st.write("**Close MAE**", close_mae)
         #st.write("**Close MSE**", close_mse)
-        # st.write("**Close r2_score**", close_r_squared)
+        #st.write("**Close r2_score**", close_r_squared)
         #st.write("**Close RMSE**", close_rmse)
 
