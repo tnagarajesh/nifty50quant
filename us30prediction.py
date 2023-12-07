@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import streamlit as st
 import numpy as np
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
+import yfinance as yf
 
 st.set_page_config(page_title="US30Prediction", page_icon = '✅',layout="wide")
 
@@ -33,10 +34,52 @@ y = US30_CPR['Date']
 q = US30_CPR['Predicted_Close']
 r = US30_CPR['Actual_Close']
 
+avg_models_us30_pred = (US30_pre_close + US30_pre_close_CPR)/2
+
+us30_history = yf.Ticker("^DJI")
+us30_avg = us30_history.history(period="60d")
+
+us30_avg['us30_avg_high_open'] = us30_avg.apply(lambda row:abs(row['High']-row['Open']),axis=1)
+us30_avg['us30_avg_low_open'] = us30_avg.apply(lambda row:abs(row['Open']-row['Low']),axis=1)
+us30_avg['us30_avg_close_open'] = us30_avg.apply(lambda row:abs(row['Open']-row['Close']),axis=1)
+us30_avg['us30_avg_high_low_range'] = us30_avg.apply(lambda row:abs(row['High']-row['Low']),axis=1)
+
+st.divider()
+
 with placeholder.container():
-    Close_CPR, Close_CAM = st.columns(2)
+
+    Close_CPR, Close_CAM, Close_Avg = st.columns(3)
     Close_CPR.metric(label="US30-CPR Prediction Close Today", value=US30_pre_close_CPR, delta=None)
     Close_CAM.metric(label="US30-CAM Prediction Close Today", value=US30_pre_close, delta=None)
+    Close_Avg.metric(label="US30-Avg Prediction Close Today", value=avg_models_us30_pred, delta=None)
+
+    st.divider()
+
+    us30_avg_high1, us30_avg_low1, us30_avg_close1, us30_avg_range1 = st.columns(4)
+    us30_avg_high1.metric(label="US30-Past 60 days Average High", value=np.mean(us30_avg['us30_avg_high_open']), delta=None)
+    us30_avg_low1.metric(label="US30-Past 60 days Average Low", value=np.mean(us30_avg['us30_avg_low_open']), delta=None)
+    us30_avg_close1.metric(label="US30-Past 60 days Average Close", value=np.mean(us30_avg['us30_avg_close_open']), delta=None)
+    us30_avg_range1.metric(label="US30-Past 60 days Average High Low Range", value=np.mean(us30_avg['us30_avg_high_low_range']), delta=None)
+
+    st.divider()
+
+    us30_avg_high_graph, us30_avg_low_graph, us30_avg_close_graph, us30_avg_range_graph = st.columns(4)
+    with us30_avg_high_graph:
+        fig2 = plt.figure(figsize=(8, 4), dpi=120)
+        plt.hist(us30_avg['us30_avg_high_open'], 5)
+        st.pyplot(fig2)
+    with us30_avg_low_graph:
+        fig2 = plt.figure(figsize=(8, 4), dpi=120)
+        plt.hist(us30_avg['us30_avg_low_open'], 5)
+        st.pyplot(fig2)
+    with us30_avg_close_graph:
+        fig2 = plt.figure(figsize=(8, 4), dpi=120)
+        plt.hist(us30_avg['us30_avg_close_open'], 5)
+        st.pyplot(fig2)
+    with us30_avg_range_graph:
+        fig2 = plt.figure(figsize=(8, 4), dpi=120)
+        plt.hist(us30_avg['us30_avg_high_low_range'], 5)
+        st.pyplot(fig2)
 
     st.divider()
 
