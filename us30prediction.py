@@ -29,6 +29,7 @@ x = US30['Date']
 z = US30['Actual_Close']
 p = US30['Predicted_Close']
 
+y = US30_CPR['Date']
 q = US30_CPR['Predicted_Close']
 r = US30_CPR['Actual_Close']
 
@@ -58,8 +59,8 @@ with placeholder.container():
     Close_CPR_graph, Close_CPR_table = st.columns(2)
     with Close_CPR_graph:
         fig1 = plt.figure(figsize=(8, 4), dpi=120)
-        plt.plot(x, r, label="US30 Actual Close", marker="o", markersize=10, linestyle="-")
-        plt.plot(x, q, label="Past US30 Predicted Close", marker="o", markersize=10, linestyle="--")
+        plt.plot(y, r, label="US30 Actual Close", marker="o", markersize=10, linestyle="-")
+        plt.plot(y, q, label="Past US30 Predicted Close", marker="o", markersize=10, linestyle="--")
         plt.plot("Today US30 Predicted Close CPR", US30_pre_close_CPR, label="Today US30 Predicted Close", marker="o",
                  markersize=10)
         plt.title("Past Predicted Vs Actual US30 Close")
