@@ -18,7 +18,7 @@ US30 = pd.read_csv('https://storage.googleapis.com/us30/US30_Pred_Actual.csv', i
 
 US30_pre = pd.read_csv('https://storage.googleapis.com/us30/US30_Pred_Features.csv')
 
-US30_pre_CPR = pd.read_csv('https://storage.googleapis.com/us30/US30_prediction.csv')
+US30_pre_CPR = pd.read_csv('https://storage.googleapis.com/us30/us30_prediction.csv')
 
 US30_CPR = pd.read_csv('https://storage.googleapis.com/us30/us30_predict_actual.csv', index_col=None)
 
