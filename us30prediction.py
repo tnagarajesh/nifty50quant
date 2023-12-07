@@ -54,7 +54,8 @@ with placeholder.container():
         st.pyplot(fig1)
 
     with Close_CAM_table:
-        st.dataframe(US30[['Date', 'Predicted_Close', 'Actual_Close', 'Close_Prediction_Error']], hide_index=True)
+        US301 = US30.sort_values(by='Date', ascending=False)
+        st.dataframe(US301[['Date', 'Predicted_Close', 'Actual_Close', 'Close_Prediction_Error']], hide_index=True)
 
     Close_CPR_graph, Close_CPR_table = st.columns(2)
     with Close_CPR_graph:
@@ -70,7 +71,8 @@ with placeholder.container():
         st.pyplot(fig1)
 
     with Close_CPR_table:
-        st.dataframe(US30_CPR[['Date', 'Predicted_Close', 'Actual_Close', 'Close_Prediction_Error']], hide_index=True)
+        US302_CPR = US30_CPR.sort_values(by='Date', ascending=False)
+        st.dataframe(US302_CPR[['Date', 'Predicted_Close', 'Actual_Close', 'Close_Prediction_Error']], hide_index=True)
 
     st.divider()
 
