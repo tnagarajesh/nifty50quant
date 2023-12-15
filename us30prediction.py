@@ -225,13 +225,13 @@ with placeholder.container():
         plt.hist(US30['us30_avg_high_low_range'], 5)
         st.pyplot(fig2)
 
-    st.divider()
+    #st.divider()
 
-    pivot_avg_high1, pivot_avg_low1, pivot_avg_close1, pivot_avg_range1 = st.columns(4)
-    pivot_avg_high1.metric(label="Average High - Today Pivots Based", value=np.mean(us30_today_pivots_avg['avg_high_open']).round(2), delta=None)
-    pivot_avg_low1.metric(label="Average Low - Today Pivots Based", value=np.mean(us30_today_pivots_avg['avg_low_open']).round(2), delta=None)
-    pivot_avg_close1.metric(label="Average Close - Today Pivots Based", value=np.mean(us30_today_pivots_avg['avg_close_open']).round(2), delta=None)
-    pivot_avg_range1.metric(label="Average High Low Range - Today Pivots Based", value=np.mean(us30_today_pivots_avg['avg_high_low_range']).round(2), delta=None)
+    #pivot_avg_high1, pivot_avg_low1, pivot_avg_close1, pivot_avg_range1 = st.columns(4)
+    #pivot_avg_high1.metric(label="Average High - Today Pivots Based", value=np.mean(us30_today_pivots_avg['avg_high_open']).round(2), delta=None)
+    #pivot_avg_low1.metric(label="Average Low - Today Pivots Based", value=np.mean(us30_today_pivots_avg['avg_low_open']).round(2), delta=None)
+    #pivot_avg_close1.metric(label="Average Close - Today Pivots Based", value=np.mean(us30_today_pivots_avg['avg_close_open']).round(2), delta=None)
+    #pivot_avg_range1.metric(label="Average High Low Range - Today Pivots Based", value=np.mean(us30_today_pivots_avg['avg_high_low_range']).round(2), delta=None)
 
     st.divider()
 
@@ -279,18 +279,18 @@ with placeholder.container():
         plt.hist(US30_last_10['us30_avg_high_low_range'], 5)
         st.pyplot(fig2)
 
-    st.divider()
+   #st.divider()
 
-    market_close1, returns = st.columns(2)
-    market_close1.metric(label="Bullish Vs Bearish", value=us30_today_pivots_avg['market_close'].value_counts(),delta=None)
-    returns.metric(label="Average Returns(Profits/Loss)", value=np.mean(us30_today_pivots_avg['Return']).round(2),delta=None)
+    #market_close1, returns = st.columns(2)
+    #market_close1.metric(label="Bullish Vs Bearish", value=us30_today_pivots_avg['market_close'].value_counts(),delta=None)
+    #returns.metric(label="Average Returns(Profits/Loss)", value=np.mean(us30_today_pivots_avg['Return']).round(2),delta=None)
 
     st.divider()
 
     st.header("Trade - Entry")
     Entry_High, Entry_Low = st.columns(2)
-    Entry_High.metric(label="Entry Price at High", value=Open+np.mean(us30_today_pivots_avg['avg_high_open']),delta=None)
-    Entry_Low.metric(label="Entry Price at Low", value=Open-np.mean(us30_today_pivots_avg['avg_low_open']),delta=None)
+    Entry_High.metric(label="Entry Price at High", value=Open+np.mean(US30_last_10['us30_avg_high_open']).round(2),delta=None)
+    Entry_Low.metric(label="Entry Price at Low", value=Open-np.mean(US30_last_10['us30_avg_low_open']).round(2),delta=None)
 
     R11,R21,R31,R41 = st.columns(4)
     R11.metric(label="R1",value=R1.round(2),delta=None)
